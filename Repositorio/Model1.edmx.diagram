@@ -4,9 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3aa6b6e7a70e4cdba08c650d32c15824" Name="Diagram1">
+      <Diagram DiagramId="edf081e38ae44cd1b80ecd73923a8821" Name="Diagram1">
         <EntityTypeShape EntityType="ListaTelefonicaModel.Pessoa" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ListaTelefonicaModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ListaTelefonicaModel.Telefone" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="ListaTelefonicaModel.FK_Telefone_Pessoa" ManuallyRouted="false" />
       </Diagram>

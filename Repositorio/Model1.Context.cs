@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ListaTelefonica.Models
+namespace Repositorio
 {
     using System;
     using System.Data.Entity;
@@ -26,7 +26,6 @@ namespace ListaTelefonica.Models
         }
     
         public virtual DbSet<Pessoa> Pessoa { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Telefone> Telefone { get; set; }
     }
 }

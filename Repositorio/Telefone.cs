@@ -7,17 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ListaTelefonica.Models
+namespace Repositorio
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class Telefone
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int Id { get; set; }
+        public int PessoaId { get; set; }
+        public string Tipo { get; set; }
+        public string Ddd { get; set; }
+        public string Numero { get; set; }
+        public System.DateTime Data { get; set; }
+    
+        public virtual Pessoa Pessoa { get; set; }
     }
 }

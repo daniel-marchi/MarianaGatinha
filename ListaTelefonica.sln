@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25008.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListaTelefonica", "ListaTelefonica\ListaTelefonica.csproj", "{02C2CFE5-BEF0-4935-8FE7-A1D5FD00DFC3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositorio", "Repositorio\Repositorio.csproj", "{EBE9BDAF-A815-416B-8FFE-8433DE06F6BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositorio.Testes", "Repositorio.Testes\Repositorio.Testes.csproj", "{220C2D3C-FB96-4E67-89D3-21C9B8ED81B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{02C2CFE5-BEF0-4935-8FE7-A1D5FD00DFC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02C2CFE5-BEF0-4935-8FE7-A1D5FD00DFC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02C2CFE5-BEF0-4935-8FE7-A1D5FD00DFC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBE9BDAF-A815-416B-8FFE-8433DE06F6BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBE9BDAF-A815-416B-8FFE-8433DE06F6BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBE9BDAF-A815-416B-8FFE-8433DE06F6BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBE9BDAF-A815-416B-8FFE-8433DE06F6BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{220C2D3C-FB96-4E67-89D3-21C9B8ED81B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{220C2D3C-FB96-4E67-89D3-21C9B8ED81B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{220C2D3C-FB96-4E67-89D3-21C9B8ED81B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{220C2D3C-FB96-4E67-89D3-21C9B8ED81B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

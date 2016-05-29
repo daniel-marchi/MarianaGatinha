@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ListaTelefonica.Models
+namespace Repositorio
 {
     using System;
     using System.Collections.Generic;

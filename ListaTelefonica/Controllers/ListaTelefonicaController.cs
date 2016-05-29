@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ListaTelefonica.Models;
+using Repositorio;
 
 namespace ListaTelefonica.Controllers
 {
@@ -18,8 +19,12 @@ namespace ListaTelefonica.Controllers
         [HttpPost]
         public ActionResult Cadastrar(string Nome, string Cpf, string Ddd, string Numero, string Tipo)
         {
+            var cadastro = new Cadastro();
+
+            cadastro.CadastrarTelefone(Nome, Cpf, Ddd, Numero, Tipo);
+            
             // Feito segundo
-            CadastrarTelefone(Nome, Cpf, Ddd, Numero, Tipo);
+            //CadastrarTelefone(Nome, Cpf, Ddd, Numero, Tipo);
 
             // Feito primeiro
             //    using (var context = new ListaTelefonicaEntities())
@@ -47,37 +52,6 @@ namespace ListaTelefonica.Controllers
         }
 
 
-        private void CadastrarTelefone(string Nome, string Cpf, string Ddd, string Numero, string Tipo)
-        {
-            using (var context = new ListaTelefonicaEntities())
-            {
-                var cpf = Cpf.Replace(".", "").Replace("-", "");
-                var pessoa = context.Pessoa.FirstOrDefault(x => x.CPF == cpf);
-
-                var telefone = new Telefone();
-                telefone.Tipo = Tipo;
-                telefone.Ddd = Ddd.Replace("(", "").Replace(")", "");
-                telefone.Numero = Numero.Replace("-", "");
-                telefone.Data = DateTime.Now;
-
-                if (pessoa == null)
-                {
-                    pessoa = new Pessoa();
-                    pessoa.Nome = Nome;
-                    pessoa.CPF = cpf;
-                    pessoa.Telefone.Add(telefone);
-
-                    context.Pessoa.Add(pessoa);
-                }
-                else
-                {
-                    pessoa.Telefone.Add(telefone);
-                    context.Pessoa.Attach(pessoa);
-                }
-
-                context.SaveChanges();
-            }
-
-        }
+        
     }
 }
