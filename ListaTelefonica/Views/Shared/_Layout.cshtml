@@ -7,6 +7,9 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+    <script src="~/Scripts/jquery-2.2.3.js"></script>
+    
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -24,6 +27,7 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Lista Telefonica", "Cadastrar", "ListaTelefonica")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -40,5 +44,15 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.inputmask/inputmask.js"></script>
+    <script src="~/Scripts/jquery.inputmask/jquery.inputmask.js"></script>
+    <script src="~/Scripts/jquery.inputmask/inputmask.date.extensions.js"></script>
+    <script src="~/Scripts/jquery.inputmask/inputmask.extensions.js"></script>    
+    <script src="~/Scripts/jquery.inputmask/inputmask.numeric.extensions.js"></script>
+    <script src="~/Scripts/jquery.inputmask/inputmask.phone.extensions.js"></script>
+    <script src="~/Scripts/jquery.inputmask/inputmask.regex.extensions.js"></script>
+    
+    
 </body>
 </html>
