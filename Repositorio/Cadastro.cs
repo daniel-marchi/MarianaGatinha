@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Repositorio
@@ -9,7 +10,7 @@ namespace Repositorio
         {
             try
             {
-                var repoPessoa = new GenericRepository<Pessoa>();
+                var repoPessoa = new GenericRepository<Pessoa>();                
 
                 var pessoa = new Pessoa();
                 pessoa.Nome = Nome;
@@ -32,5 +33,21 @@ namespace Repositorio
                 return false;
             }
         }
-    }
+
+        public List<Telefone> ListarTelefones()
+        {
+            var repoTel = new GenericRepository<Telefone>();
+
+            return repoTel.GetAll().ToList();
+        }
+
+        public List<Telefone> BuscarTelefonesPorNome(string nome)
+        {
+            var repoTel = new GenericRepository<Telefone>();
+
+            return repoTel.FindBy(x=>x.Pessoa.Nome == nome).ToList();
+        }
+    }   
+
+    
 }

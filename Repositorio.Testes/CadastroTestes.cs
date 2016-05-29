@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Linq;
 
 namespace Repositorio.Testes
 {
@@ -7,7 +8,7 @@ namespace Repositorio.Testes
     public class CadastroTestes
     {
         [TestMethod]
-        public void CadastrarTelefoneComPessoaInexistente()
+        public void CadastrarTelefoneComPessoaInexistenteTeste()
         {
             var cadastro = new Cadastro();
 
@@ -24,7 +25,7 @@ namespace Repositorio.Testes
         }
 
         [TestMethod]
-        public void CadastrarTelefoneComPessoaExistente()
+        public void CadastrarTelefoneComPessoaExistenteTeste()
         {
             var cadastro = new Cadastro();
 
@@ -38,6 +39,23 @@ namespace Repositorio.Testes
 
             Assert.IsTrue(assert);
 
+        }
+
+
+        [TestMethod]
+        public void ListarTelefonesTeste()
+        {
+            var telefones = new Cadastro().ListarTelefones();
+
+            Assert.IsTrue(telefones.Any());
+        }
+
+        [TestMethod]
+        public void BuscarTelefonesDoJaspionTeste()
+        {
+            var telefones = new Cadastro().BuscarTelefonesPorNome("Jaspion");
+
+            Assert.IsTrue(telefones.Any());
         }
     }
 }
