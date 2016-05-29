@@ -47,7 +47,12 @@ namespace Repositorio
 
             return repoTel.FindBy(x=>x.Pessoa.Nome == nome).ToList();
         }
-    }   
 
-    
+        public void ApagarTelefone(string cpf)
+        {
+            var repoTel = new GenericRepository<Telefone>();
+
+            repoTel.Delete(repoTel.FindBy(x => x.Pessoa.CPF == cpf).FirstOrDefault());
+        }
+    }      
 }
