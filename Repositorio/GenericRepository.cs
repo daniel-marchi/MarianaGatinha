@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Repositorio;
+using System;
 using System.Data.Entity;
 using System.Linq;
 
 namespace Repositorio
 {
 
-    public abstract class GenericRepository<T> :
-        IGenericRepository<T> where T : class 
+    public class GenericRepository<T> :
+       IRepository<T> where T : class 
     {
 
         private ListaTelefonicaEntities _entities = new ListaTelefonicaEntities();

@@ -9,34 +9,21 @@ namespace Repositorio
         {
             try
             {
-                using (var context = new ListaTelefonicaEntities())
+                var repoPessoa = new GenericRepository<Pessoa>();
+
+                var pessoa = new Pessoa();
+                pessoa.Nome = Nome;
+                pessoa.CPF = Cpf.Replace(".", "").Replace("-", "");
+                pessoa.Telefone.Add(new Telefone
                 {
-                    var cpf = Cpf.Replace(".", "").Replace("-", "");
-                    var pessoa = context.Pessoa.FirstOrDefault(x => x.CPF == cpf);
+                    Tipo = Tipo,
+                    Ddd = Ddd.Replace("(", "").Replace(")", ""),
+                    Numero = Numero.Replace("-", ""),
+                    Data = DateTime.Now,
+                });
 
-                    var telefone = new Telefone();
-                    telefone.Tipo = Tipo;
-                    telefone.Ddd = Ddd.Replace("(", "").Replace(")", "");
-                    telefone.Numero = Numero.Replace("-", "");
-                    telefone.Data = DateTime.Now;
-
-                    if (pessoa == null)
-                    {
-                        pessoa = new Pessoa();
-                        pessoa.Nome = Nome;
-                        pessoa.CPF = cpf;
-                        pessoa.Telefone.Add(telefone);
-
-                        context.Pessoa.Add(pessoa);
-                    }
-                    else
-                    {
-                        pessoa.Telefone.Add(telefone);
-                        context.Pessoa.Attach(pessoa);
-                    }
-
-                    context.SaveChanges();
-                }
+                repoPessoa.Add(pessoa);
+                repoPessoa.Save();
 
                 return true;
             }
@@ -44,7 +31,6 @@ namespace Repositorio
             {
                 return false;
             }
-
         }
     }
 }
